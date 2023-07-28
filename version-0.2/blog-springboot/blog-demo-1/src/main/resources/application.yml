@@ -1,0 +1,74 @@
+spring:
+  datasource:
+    druid:
+      url: jdbc:mysql://localhost:3306/zyq_blog_db_01?characterEncoding=utf-8
+      username: root
+      password:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+  #配置 SMTP 服务器地址
+  mail:
+    host: smtp.qq.com
+  #SMTP 服务器的端口
+    port: 465
+  #配置邮箱用户名
+  username: 1359858289@qq.com
+  #配置密码，注意，不是真正的密码，而是申请到的授权码
+  password: guzyjevkpedcfedf
+  #默认的邮件编码
+  default-encoding: UTF-8
+  #配饰 SSL 加密工厂
+  properties.mail.smtp.socketFactoryClass: javax.net.ssl.SSLSocketFactory
+  #表示开启 DEBUG 模式，这样，邮件发送过程的日志会在控制台打印出来，方便排查错误
+  properties.mail.debug: true
+
+#      aop-patterns: com.zyq.*     #拦截所有com.zyq包下的
+#      filters: stat,wall           #开启功能数据库监测和数据库防火墙
+#
+#      stat-view-servlet:
+#        enabled: true             #开启功能拦截网页视图
+#        login-username: admin
+#        login-password: 123456
+#        reset-enable: true        #重置按钮
+#
+#      web-stat-filter:            #开启web相关监控
+#        enabled: true
+#        url-pattern: /*           #匹配路径
+#        #排除路径
+#        exclusions: '*.js,*.gif,*.jpg,*.png,*.css,*.ico,/druid/*'
+#
+#      filter:
+#        stat:
+#          slow-sql-millis: 1000
+#          log-slow-sql: true
+#          enabled: true
+#        wall:
+#          enabled: true
+#          config:
+#            drop-table-allow: false
+
+  jdbc:
+    template:
+      query-timeout: 3
+#  配置全局404但会导致Swagger访问不到静态资源需要另外配置
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: 5MB
+      max-request-size: 5MB
+  mvc:
+    throw-exception-if-no-handler-found: true
+  resources:
+    add-mappings: false
+
+mybatis-plus:
+  mapper-locations: classpath:/mapper/Mapper.xml #配置扫描xml文件路径
+server:
+  port: 8080
+  servlet:
+    context-path: /api
+# hutool 自定义配置文件地址
+#setting:
+#  path: classpath:/templates/blog.setting
+# Linux上读取外部配置文件
+setting:
+  path: /home/blog/blog.setting
