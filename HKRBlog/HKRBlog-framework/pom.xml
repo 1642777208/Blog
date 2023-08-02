@@ -41,6 +41,13 @@
             <artifactId>lombok</artifactId>
             <optional>true</optional>
         </dependency>
+        <!--mysql驱动-->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <scope>runtime</scope>
+            <version>8.0.31</version>
+        </dependency>
         <!--druid连接池-->
         <dependency>
             <groupId>com.alibaba</groupId>

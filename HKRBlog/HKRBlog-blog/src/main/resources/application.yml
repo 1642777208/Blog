@@ -8,7 +8,7 @@ spring:
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-  mapper-locations: classpath:/mapper/Mapper.xml #配置扫描xml文件路径
+#  mapper-locations: classpath:/mapper/Mapper.xml #配置扫描xml文件路径
 server:
   port: 8080
   servlet:
