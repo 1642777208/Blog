@@ -5,11 +5,25 @@ spring:
       username: root
       password:
       driver-class-name: com.mysql.cj.jdbc.Driver
+  redis:
+    host: localhost
+    port: 6379
+  servlet:
+    multipart:
+      max-file-size: 5MB
+      max-request-size: 10MB
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
 #  mapper-locations: classpath:/mapper/Mapper.xml #配置扫描xml文件路径
+
 server:
   port: 8080
   servlet:
     context-path: /api
+
+oss:
+  accessKey: ZYV1cdAOhaXbDu2Pe2qXR-UdYtwq2tZ5mJX81SKP
+  secretKey: YEGh0eBd-pG6AaksbuHKB3n7nZ-g-y0soSDrcCTq
+  bucket: hkrblog
+  url: http://res.hkrblog.cn/

@@ -1,5 +1,6 @@
 package com.zyq.domain.vo;
 
+import com.zyq.enums.BlogErrorInfoEnum;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
@@ -43,6 +44,9 @@ public class BaseResult <T> {
 
     public static <T> BaseResult<T> fail(Integer code, String message) {
         return buildResult(false, null, code, message);
+    }
+    public static <T> BaseResult<T> fail(BlogErrorInfoEnum errorInfoEnum) {
+        return buildResult(false, null, errorInfoEnum.getCode(), errorInfoEnum.getMsg());
     }
 
     private static <T> BaseResult<T> buildResult(Boolean flag, T data, Integer code, String message) {
